@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_game"
+        android:icon="@drawable/ic_baseline_gamepad_24"
+        android:title="@string/title_game" />
+
+    <item
+        android:id="@+id/navigation_weather"
+        android:icon="@drawable/ic_cloud_24"
+        android:title="@string/title_weather" />
+    <item
+        android:id="@+id/navigation_watch"
+        android:icon="@drawable/ic_watch_later_24"
+        android:title="@string/title_watch" />
+
+</menu>

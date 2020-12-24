@@ -70,13 +70,13 @@ class MusicViewModel(application: Application): AndroidViewModel(application) {
             current = 0
         }
     }
-    fun onNext(v: View){
+    fun onNext(){
         current++
         if(current>=musicList.size){
             current=0
         }
     }
-    fun onPrev(v: View){
+    fun onPrev(){
         current--
         if(current<0){
             current = musicList.size-1

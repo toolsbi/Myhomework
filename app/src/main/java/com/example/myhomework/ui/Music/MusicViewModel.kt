@@ -17,7 +17,7 @@ import com.example.myhomework.R
 class MusicViewModel(application: Application): AndroidViewModel(application) {
     private val _musicList: MutableLiveData<MutableList<String>> = MutableLiveData()
     private val _musicNameList: MutableLiveData<MutableList<String>> = MutableLiveData()
-    var current =0
+    var current =-1
         get() = field
     var isPause=false
         get() = field

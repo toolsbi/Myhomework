@@ -105,31 +105,6 @@ class MusicFragment : Fragment() {
             play()
         }
     }
-//    fun onPlay(v: View){
-//        play()
-//
-//    }
-//    fun onPause(v: View){
-//        if(viewModel.isPause){
-//            mediaPlayer.start()
-//        }else{
-//            mediaPlayer.pause()
-//            viewModel.isPause = true
-//        }
-//    }
-//    fun onNext(v: View){
-//        viewModel.onNext()
-//        viewModel.notification()
-//        play()
-//    }
-//    fun onPrev(v: View){
-//        viewModel.onPrev()
-//        play()
-//    }
-//    fun onStop(v: View){
-//        mediaPlayer.stop()
-//
-//    }
     fun play(){
         val current=viewModel.current
         if(musicList.size==0) return
@@ -153,23 +128,5 @@ class MusicFragment : Fragment() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         viewModel.getMusicList()
     }
-//    private fun getMusicList(){
-//        val cursor=contentResolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,null,null,null,null)
-//        if(cursor!=null){
-//            while(cursor.moveToNext()){
-//                val musicPath=cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA))
-//                musicList.add(musicPath)
-//                val musicName=cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE))
-//                musicNameList.add(musicName)
-//                Log.d(TAG,"getMusicList:$musicPath name:$musicName")
-//            }
-//            cursor.close()
-//        }
-//    }
-
-//    override fun onDestroy() {
-//        super.onDestroy()
-//        mediaPlayer.release()
-//    }
 
 }

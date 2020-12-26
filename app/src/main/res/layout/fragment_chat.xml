@@ -27,9 +27,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/chat"
+            android:hint="@string/chat"
             android:autofillHints="" />
-
         <Button
             android:id="@+id/button_send"
             android:layout_width="wrap_content"

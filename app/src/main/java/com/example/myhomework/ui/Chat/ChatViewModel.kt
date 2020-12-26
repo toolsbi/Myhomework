@@ -39,13 +39,4 @@ class ChatViewModel(application: Application):AndroidViewModel(application) {
 
 
     }
-    fun saveData() {
-        val output = getApplication<Application>()?.openFileOutput("data", Context.MODE_PRIVATE)
-        val objectOutputStream = ObjectOutputStream(output)
-
-        objectOutputStream.writeObject(msgList)
-
-        objectOutputStream.close()
-        output?.close()
-    }
 }

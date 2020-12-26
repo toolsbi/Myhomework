@@ -1,5 +1,6 @@
 package com.example.myhomework.ui.Chat
 
+import android.app.Application
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -66,37 +67,17 @@ class ChatFragment :Fragment(){
 
     override fun onStop() {
         super.onStop()
-        viewModel.saveData()
+        saveData()
     }
+    fun saveData() {
+        val output = activity?.openFileOutput("data", Context.MODE_PRIVATE)
+        val objectOutputStream = ObjectOutputStream(output)
 
-//    fun loadData():MutableList<Msg>? {
-//        try {
-//            val input = activity?.openFileInput("data")
-//            val objectInputStream = ObjectInputStream(input)
-//
-//            val msgs = objectInputStream.readObject() as MutableList<Msg>
-//
-//            objectInputStream.close()
-//            input?.close()
-//            return msgs
-//
-//        }catch (e: Exception){
-//            return null
-//        }
-//
-//
-//    }
+        objectOutputStream.writeObject(msgList)
 
-//    fun saveData() {
-//        val output = activity?.openFileOutput("data", Context.MODE_PRIVATE)
-//        val objectOutputStream = ObjectOutputStream(output)
-//
-//        objectOutputStream.writeObject(msgList)
-//
-//        objectOutputStream.close()
-//        output?.close()
-//    }
-
+        objectOutputStream.close()
+        output?.close()
+    }
     fun addMsg(str: String): Msg{
         val count = (0..10).random()
         val builder = StringBuilder()

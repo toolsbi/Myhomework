@@ -19,7 +19,7 @@ class MusicViewModel(application: Application): AndroidViewModel(application) {
     private val _musicNameList: MutableLiveData<MutableList<String>> = MutableLiveData()
     var current =-1
         get() = field
-    var isPause=false
+    var isPause=true
         get() = field
     val musicList= mutableListOf<String>()
     val musicNameList= mutableListOf<String>()
@@ -53,7 +53,7 @@ class MusicViewModel(application: Application): AndroidViewModel(application) {
             builder= Notification.Builder(getApplication<Application>().applicationContext)
         }
 
-        val intent= Intent(getApplication<Application>().applicationContext, MainActivity::class.java)
+        val intent= Intent(getApplication<Application>().applicationContext, MusicFragment::class.java)
         //延迟意图
         val pendingIntent= PendingIntent.getActivity(getApplication<Application>().applicationContext,1,intent, PendingIntent.FLAG_UPDATE_CURRENT)
         val notification=builder.setSmallIcon(R.drawable.ic_notification)
@@ -63,6 +63,7 @@ class MusicViewModel(application: Application): AndroidViewModel(application) {
             .setAutoCancel(true)
             .build()
         notificationManager.notify(Notification_ID,notification)
+        isPause=true
     }
     fun setOnCompletionListener() {
         current++

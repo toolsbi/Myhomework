@@ -19,5 +19,9 @@
         android:id="@+id/navigation_watch"
         android:icon="@drawable/ic_watch_later_24"
         android:title="@string/title_watch" />
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/ic_baseline_chat_24"
+        android:title="@string/title_chat" />
 
 </menu>

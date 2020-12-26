@@ -48,7 +48,7 @@ class MusicFragment : Fragment() {
         }
         mediaPlayer.setOnCompletionListener {
             viewModel.setOnCompletionListener()
-            play()
+//            play()
             viewModel.notification()
 
         }
@@ -85,7 +85,7 @@ class MusicFragment : Fragment() {
             play()
         }
         button2.setOnClickListener {
-            if(viewModel.isPause){
+            if(!viewModel.isPause){
                 mediaPlayer.start()
             }else{
                 mediaPlayer.pause()
@@ -93,7 +93,7 @@ class MusicFragment : Fragment() {
             }
         }
         button3.setOnClickListener {
-            mediaPlayer.stop()
+            mediaPlayer.start()
         }
         button4.setOnClickListener {
             viewModel.onNext()

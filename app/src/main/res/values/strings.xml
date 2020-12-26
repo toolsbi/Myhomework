@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">myhomework</string>
-    <string name="title_music">Music</string>
-    <string name="title_game">CardGame</string>
-    <string name="title_weather">Weather</string>
-    <string name="title_watch">Watch</string>
+    <string name="title_music">音乐</string>
+    <string name="title_game">游戏</string>
+    <string name="title_weather">天气</string>
+    <string name="title_watch">时钟</string>
+    <string name="title_chat">聊天</string>
     <string name="timer">00:00:00</string>
     <string name="start">start</string>
     <string name="stop">stop</string>
@@ -21,4 +22,6 @@
     <string name="next">next</string>
     <string name="pause">pause</string>
     <string name="notification">notification</string>
+    <string name="chat">请输入聊天内容</string>
+    <string name="send">发送</string>
 </resources>

@@ -6,10 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
-import com.example.homework4.homework6.cardGameFragment.cardModel.CardMatchingGame
 import com.example.myhomework.R
 
-class CardRecyclerViewAdapter(val game:CardMatchingGame):RecyclerView.Adapter<CardRecyclerViewAdapter.ViewHolder> (){
+class CardRecyclerViewAdapter(val game: CardMatchingGame):RecyclerView.Adapter<CardRecyclerViewAdapter.ViewHolder> (){
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val cardButton: Button
         init {

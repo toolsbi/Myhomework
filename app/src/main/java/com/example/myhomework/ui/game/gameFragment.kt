@@ -12,7 +12,7 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.homework4.homework6.cardGameFragment.cardModel.CardMatchingGame
+import com.example.myhomework.cardModel.CardMatchingGame
 import com.example.myhomework.R
 import com.example.myhomework.cardModel.CardRecyclerViewAdapter
 

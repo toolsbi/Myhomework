@@ -16,7 +16,7 @@ import com.example.myhomework.MainActivity
 import com.example.myhomework.R
 
 class MusicViewModel(application: Application): AndroidViewModel(application) {
-    var current =-1
+    var current =0
         get() = field
     var isPause=true
         get() = field
@@ -62,7 +62,7 @@ class MusicViewModel(application: Application): AndroidViewModel(application) {
     }
     fun setOnCompletionListener() {
         current++
-        if (current >= musicList.size) {
+        if (current >= musicList.size-1) {
             current = 0
         }
     }

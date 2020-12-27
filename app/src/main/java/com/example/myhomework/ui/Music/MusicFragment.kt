@@ -43,15 +43,16 @@ class MusicFragment : Fragment() {
             it.start()
         }
         mediaPlayer.setOnCompletionListener {
-            viewModel.setOnCompletionListener()
             play()
+            viewModel.setOnCompletionListener()
             viewModel.notification()
 
         }
         if(context?.let { ContextCompat.checkSelfPermission(it,android.Manifest.permission.READ_EXTERNAL_STORAGE) } != PackageManager.PERMISSION_GRANTED){
             activity?.let { ActivityCompat.requestPermissions(it, arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),0) }
         }else{
-            viewModel.getMusicList()
+                viewModel.getMusicList()
+
         }
         seekBar.setOnSeekBarChangeListener(object :  SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(
@@ -99,10 +100,11 @@ class MusicFragment : Fragment() {
         button5.setOnClickListener {
             viewModel.onPrev()
             play()
+            viewModel.notification()
         }
     }
     fun play(){
-        val current=viewModel.current
+        var current=viewModel.current
         if(musicList.size==0) return
         val path=musicList[current]
         mediaPlayer.reset()
@@ -122,12 +124,15 @@ class MusicFragment : Fragment() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        viewModel.getMusicList()
+            viewModel.getMusicList()
     }
 
     override fun onStop() {
         super.onStop()
         mediaPlayer.stop()
+        viewModel.musicNameList.clear()
+        viewModel.musicList.clear()
+        viewModel.current=0
     }
 
 }

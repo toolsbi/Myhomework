@@ -5,8 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.example.homework4.homework6.cardGameFragment.cardModel.CardMatchingGame
+import com.example.myhomework.cardModel.CardMatchingGame
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
 import java.lang.Exception

@@ -1,6 +1,6 @@
-package com.example.homework4.homework6.cardGameFragment.cardModel
+package com.example.myhomework.cardModel
 
-import com.example.homework4.homework6.cardGameFragment.cardModel.Card
+import com.example.myhomework.cardModel.Card
 import java.util.Random
 
 class Deck() {

@@ -1,4 +1,4 @@
-package com.example.homework4.homework6.cardGameFragment.cardModel
+package com.example.myhomework.cardModel
 
 import java.io.Serializable
 

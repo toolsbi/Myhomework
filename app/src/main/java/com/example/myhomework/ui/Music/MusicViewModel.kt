@@ -4,6 +4,7 @@ import android.app.*
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.media.MediaPlayer
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
@@ -15,16 +16,12 @@ import com.example.myhomework.MainActivity
 import com.example.myhomework.R
 
 class MusicViewModel(application: Application): AndroidViewModel(application) {
-    private val _musicList: MutableLiveData<MutableList<String>> = MutableLiveData()
-    private val _musicNameList: MutableLiveData<MutableList<String>> = MutableLiveData()
     var current =-1
         get() = field
     var isPause=true
         get() = field
     val musicList= mutableListOf<String>()
     val musicNameList= mutableListOf<String>()
-    val musicLists: LiveData<MutableList<String>> = _musicList
-    val musicNameLists: LiveData<MutableList<String>> = _musicNameList
     fun getMusicList(){
         val cursor=getApplication<Application>().contentResolver.query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,null,null,null,null)
         if(cursor!=null){
@@ -37,8 +34,6 @@ class MusicViewModel(application: Application): AndroidViewModel(application) {
             }
             cursor.close()
         }
-        _musicList.postValue(musicList)
-        _musicNameList.postValue(musicNameList)
     }
     fun notification() {
         val Channel_ID="my channel"

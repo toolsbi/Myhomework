@@ -34,21 +34,17 @@ class MusicFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_music, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MusicViewModel::class.java)
-        viewModel.musicLists.observe(viewLifecycleOwner, Observer {
-            musicList=it
-        })
-        viewModel.musicNameLists.observe(viewLifecycleOwner, Observer {
-            musicNameList=it
-        })
+        musicList=viewModel.musicList
+        musicNameList=viewModel.musicNameList
         mediaPlayer.setOnPreparedListener {
             it.start()
         }
         mediaPlayer.setOnCompletionListener {
             viewModel.setOnCompletionListener()
-//            play()
+            play()
             viewModel.notification()
 
         }
@@ -127,6 +123,11 @@ class MusicFragment : Fragment() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         viewModel.getMusicList()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mediaPlayer.stop()
     }
 
 }

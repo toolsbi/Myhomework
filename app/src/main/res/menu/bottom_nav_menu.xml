@@ -1,27 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item
-        android:id="@+id/navigation_music"
-        android:icon="@drawable/ic_baseline_music_note_24"
-        android:title="@string/title_music" />
-
-    <item
-        android:id="@+id/navigation_game"
-        android:icon="@drawable/ic_baseline_gamepad_24"
-        android:title="@string/title_game" />
-
     <item
         android:id="@+id/navigation_weather"
         android:icon="@drawable/ic_cloud_24"
         android:title="@string/title_weather" />
     <item
-        android:id="@+id/navigation_watch"
-        android:icon="@drawable/ic_watch_later_24"
-        android:title="@string/title_watch" />
+        android:id="@+id/navigation_game"
+        android:icon="@drawable/ic_baseline_gamepad_24"
+        android:title="@string/title_game" />
     <item
         android:id="@+id/navigation_chat"
         android:icon="@drawable/ic_baseline_chat_24"
         android:title="@string/title_chat" />
+    <item
+        android:id="@+id/navigation_watch"
+        android:icon="@drawable/ic_watch_later_24"
+        android:title="@string/title_watch" />
+    <item
+        android:id="@+id/navigation_music"
+        android:icon="@drawable/ic_baseline_music_note_24"
+        android:title="@string/title_music" />
 
 </menu>
